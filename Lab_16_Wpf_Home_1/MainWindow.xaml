@@ -1,0 +1,113 @@
+﻿<Window x:Class="Lab_16_Wpf_Home_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_16_Wpf_Home_1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="450">
+    <Window.Resources>
+
+        <PathGeometry x:Key="pathL"
+                      Figures="M151.49986,266.99996 C163.99928,258.49995 151,183 143,150 135,117 120.00057,100 107.0009,103 94.001224,106 77.00165,132.99983 76.001675,150.99985 75.0017,168.99987 70.001829,183.99989 70.001829,219.99994 70.001829,255.99998 77.001656,253.99998 88.00138,252.99998 99.001104,251.99998 104.50076,250.74958 117.50043,257.74959 130.50011,264.7496 139.00044,275.49997 151.49986,266.99996 z"
+                       />
+        <PathGeometry x:Key="pathR"
+                      Figures="M349.50027,252.49978 C359.49941,248.99957 361.33384,208.33332 350.83384,161.83332 340.33384,115.33332 321.00106,107.5 307.50162,112 294.00218,116.5 276.00292,154.00007 271.50311,182.50005 267.0033,211.00003 265.50336,227.50002 267.0033,251.5 268.50324,275.49998 270.00366,270.99999 289.50274,275.49998 309.00182,279.99998 306.00196,263.49998 322.50118,254.49999 339.00041,245.49999 339.50114,255.99999 349.50027,252.49978 z"
+                      />
+
+    </Window.Resources>
+    <Canvas>
+
+        <Path Data="M50,276 C50,276 42.487518,81.277195 107.00028,80.500409 190.00054,79.501018 183.00094,285.50037 183.00094,285.50037 183.00094,285.50037 124.50043,291.99996 99.00021,271 73.499987,250.00005 50,276 50,276 z" 
+              Fill="#FFF4F4F5" 
+              HorizontalAlignment="Left" 
+              Height="221.954" 
+              Stretch="Fill" 
+              Stroke="Black" 
+              VerticalAlignment="Top" 
+              Width="134.414" 
+              Canvas.Left="60.232" 
+              Canvas.Top="80.496"/>
+        <Path Data="M50,276 C50,276 42.487518,81.277195 107.00028,80.500409 190.00054,79.501018 183.00094,285.50037 183.00094,285.50037 183.00094,285.50037 124.50043,291.99996 99.00021,271 73.499987,250.00005 50,276 50,276 z" 
+              Fill="#FFF4F4F5" 
+              HorizontalAlignment="Left" 
+              Height="221.954" 
+              Stretch="Fill" Stroke="Black" 
+              VerticalAlignment="Top" 
+              Width="134.414" Canvas.Left="381.534" Canvas.Top="81.991">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Ellipse Height="21.333" Canvas.Left="142.333" Canvas.Top="260" Width="21">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0.575"/>
+                    <GradientStop Color="White" Offset="0.133"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+            <Ellipse.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingPath
+                                Storyboard.TargetProperty="(Canvas.Top)"
+                                Duration="0:0:3"
+                                RepeatBehavior="Forever"
+                                PathGeometry="{StaticResource pathL}"
+                                Source="Y"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingPath
+                                Storyboard.TargetProperty="(Canvas.Left)"
+                                Duration="0:0:3"
+                                RepeatBehavior="Forever"
+                                PathGeometry="{StaticResource pathL}"
+                                Source="X"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Ellipse.Triggers>
+        </Ellipse>
+
+
+        <Ellipse Height="21.333" Canvas.Left="272.333" Canvas.Top="260" Width="21">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0.575"/>
+                    <GradientStop Color="White" Offset="0.133"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+            <Ellipse.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingPath
+                                Storyboard.TargetProperty="(Canvas.Top)"
+                                Duration="0:0:3"
+                                RepeatBehavior="Forever"
+                                PathGeometry="{StaticResource pathR}"
+                                Source="Y"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingPath
+                                Storyboard.TargetProperty="(Canvas.Left)"
+                                Duration="0:0:3"
+                                RepeatBehavior="Forever"
+                                PathGeometry="{StaticResource pathR}"
+                                Source="X"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Ellipse.Triggers>
+        </Ellipse>
+        
+
+    </Canvas>
+</Window>
